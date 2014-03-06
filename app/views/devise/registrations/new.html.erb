@@ -1,0 +1,40 @@
+
+<%= add_page_title('Faça seu cadastro')%>
+
+<div>
+  <%= bootstrap_flash %>
+  <%= form_for(resource, :as => resource_name,
+                         :url => registration_path(resource_name),
+                         :html => {:class => 'form-horizontal',
+                                   :role => 'form',
+                                   :onsubmit => 'return check_form()'}) do |f| %>
+
+    <%= error_messages!(resource) %>
+    <%= add_text_field(f, resource, :company_name, true)%>
+    <%= add_text_field(f, resource, :first_name)%>
+    <%= add_text_field(f, resource, :last_name)%>
+    <%= add_text_field(f, resource, :email)%>
+    <%= add_password_field(f, resource, :password, true)%>
+    <%= add_password_field(f, resource, :password_confirmation, true)%>
+    <%= add_checkbox("Li e concordo com os #{link_to('termos de uso', terms_path, :target => '_blank')}", 'terms')%>
+    <%= add_submit_button(f, t('sign_up'))%>
+  <% end %>
+</div>
+
+
+
+<script type="text/javascript">
+
+  function check_form()
+  {
+    if(!$('#terms').is(':checked')){
+      alert("É necessário aceitar os termos para prosseguir");
+      $('#terms').focus();
+      return false;
+    }
+    else {
+      return true;
+    }
+  }
+
+</script>

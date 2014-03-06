@@ -1,0 +1,33 @@
+<div class="breadcrumbs" id="breadcrumbs">
+  <ul class="breadcrumb">
+    <li>
+      <i class="icon-home home-icon"></i>
+      <%= link_to t('home'), root_path %>
+    </li>
+    <li>
+      <%= link_to t('users'), users_path %>
+    </li>
+    <li class="active"><%= t('edit_user')%></li>
+  </ul>
+  <!-- .breadcrumb -->
+</div>
+
+
+<%= add_page_title(t('edit') + " " + @user.full_name)%>
+
+<div>
+  <%= form_for(@user, html: {class: 'form-horizontal', role: 'form'}) do |f| %>
+    <%= error_messages!(@user) %>
+    <%= add_text_field(f, @user, :first_name)%>
+    <%= add_text_field(f, @user, :last_name)%>
+    <%= add_text_field(f, @user, :email)%>
+
+
+    <% extra_buttons = [] %>
+    <% extra_buttons << link_to(t('update_password'), edit_password_user_path(@user), class: 'btn btn-danger') %>
+    <% extra_buttons << back %>
+
+    <%= add_submit_button(f, t('save'), extra_buttons)%>
+
+  <% end %>
+</div>

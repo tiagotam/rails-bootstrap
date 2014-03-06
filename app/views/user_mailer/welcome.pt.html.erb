@@ -1,0 +1,31 @@
+<% content_for :title do %>
+  Bem-vindo ao Rails Bootstrap
+<% end %>
+<% content_for :body do %>
+  <font size="4" style="text-decoration:none;color:#5c6972;font-size:16px;line-height:22px" face="Helvetica Neue, Arial, Helvetica, sans-serif">
+
+  <p>Olá <b><%= @name%></b>,</p>
+  <p>
+    Abaixo estão os seus dados de acesso ao <b><%= APPLICATION_NAME %></b>.
+  </p>
+
+  <ul>
+    <li>Endereço de acesso: <%= link_to root_url, new_user_session_url %> </li>
+    <li>Login: <%= @email%></li>
+    <% if @password.present? %>
+      <li>Senha: <%= @password%></li>
+    <% end %>
+  </ul>
+
+  <% if @password.blank? %>
+  	<p>
+      Por questões de segurança, não enviamos sua senha  neste e-mail.<br/>
+  		Caso tenha esquecido sua senha acesse: <%= link_to t('password_recovery'), new_user_password_url %>
+  	</p>
+  <% end %>
+
+  Att,<br/>
+  Equipe RailsBootstrap
+
+  </font>
+<% end %>

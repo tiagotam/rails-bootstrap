@@ -1,0 +1,94 @@
+// Rails Bootstrap
+// @author Tiago <tiago@tamworks.com>
+
+/**
+ * Default attributes for spinner
+ */
+var spin_default = {
+  lines: 13,      // The number of lines to draw
+  length: 10,     // The length of each line
+  width: 7,       // The line thickness
+  radius: 18,     // The radius of the inner circle
+  corners: 1,     // Corner roundness (0..1)
+  rotate: 0,      // The rotation offset
+  direction: 1,   // 1: clockwise, -1: counterclockwise
+  color: '#000',  // #rgb or #rrggbb
+  speed: 1.5,     // Rounds per second
+  trail: 68,      // Afterglow percentage
+  shadow: false,  // Whether to render a shadow
+  hwaccel: false, // Whether to use hardware acceleration
+  className: 'spinner', // The CSS class to assign to the spinner
+  zIndex: 2e9,    // The z-index (defaults to 2000000000)
+  top: 'auto',    // Top position relative to parent in px
+  left: 'auto'    // Left position relative to parent in px
+};
+
+/**
+ * Global var for spinner
+ */
+var SPINNER;
+
+/**
+ * Starts default spinner inside div named container_spin.
+ */
+function start_default_spin() {
+  if (SPINNER == null) {
+    var target = document.getElementById("container_spin");
+    SPINNER = new Spinner(spin_default).spin(target);
+  }
+}
+
+/**
+ * Stops default spinner
+ */
+function stop_default_spin() {
+  if (SPINNER != null) {
+    SPINNER.stop();
+    SPINNER = null;
+  }
+}
+
+/**
+ * Apply wizard plugin
+ */
+function apply_wizard() {
+  if ($('#fuelux-wizard').lenght != 0) {
+    $('#fuelux-wizard').wizard();
+    var steps = $('#fuelux-wizard').find('li');
+    var numSteps = steps.length;
+    var width = parseFloat((100 / numSteps).toFixed(1))+'%';
+    steps.css({'min-width':width , 'max-width':width});
+  }
+}
+
+/**
+ * Apply radio group button styles
+ */
+function apply_radio_group_button() {
+  $('.modal-radio').on("change", function(){
+    $('.modal-radio').parent().attr("class", "btn btn-lg");
+    $(".modal-radio:checked").parent().attr("class", "btn btn-lg btn-info");
+  });
+  $('.modal-radio').parent().attr("class", "btn btn-lg");
+  $(".modal-radio:checked").parent().attr("class", "btn btn-lg btn-info");
+}
+
+/**
+ * Format numbers
+ * @param number
+ * @param dec
+ * @param dsep
+ * @param tsep
+ * @returns {*}
+ */
+function number_format(number, dec, dsep, tsep) {
+  if (isNaN(number) || number == null) return '';
+
+  number = number.toFixed(~~dec);
+  tsep = typeof tsep == 'string' ? tsep : ',';
+
+  var parts = number.split('.'), fnums = parts[0],
+    decimals = parts[1] ? (dsep || '.') + parts[1] : '';
+
+  return fnums.replace(/(\d)(?=(?:\d{3})+$)/g, '$1' + tsep) + decimals;
+}

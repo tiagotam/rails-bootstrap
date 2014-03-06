@@ -1,0 +1,31 @@
+<div class="breadcrumbs" id="breadcrumbs">
+  <ul class="breadcrumb">
+    <li>
+      <i class="icon-home home-icon"></i>
+      <%= link_to t('home'), root_path %>
+    </li>
+    <li>
+      <%= link_to t('users'), users_path %>
+    </li>
+    <li class="active"><%= t('new_user')%></li>
+  </ul>
+  <!-- .breadcrumb -->
+</div>
+
+
+<%= add_page_title(t('new_user') )%>
+
+<div>
+  <%= form_for(@user, html: {class: 'form-horizontal', role: 'form'}) do |f| %>
+
+    <%= error_messages!(@user) %>
+    <%= add_text_field(f, @user, :first_name)%>
+    <%= add_text_field(f, @user, :last_name)%>
+    <%= add_text_field(f, @user, :email)%>
+    <%= add_password_field(f, @user, :password, true)%>
+    <%= add_password_field(f, @user, :password_confirmation, true)%>
+    <%= add_checkbox_field(f, @user, :send_password, t('activerecord.attributes.user.send_password'), true) %>
+    <%= add_submit_and_back_button(f) %>
+
+  <% end %>
+</div>

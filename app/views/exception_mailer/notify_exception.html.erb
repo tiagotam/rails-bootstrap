@@ -1,0 +1,45 @@
+<% content_for :title do %>
+  Exception
+<% end %>
+
+<% content_for :body do %>
+  <font size="4" style="color:#48545d;font-size:12px;line-height:25px" face="Helvetica Neue, Arial, Helvetica, sans-serif">
+    <div style="text-align: left; margin-left: 10px;">
+
+      <b>ID:</b> Exception#<%= @exception_log.id %><br/>
+
+      <%= @exception_log.created_at.strftime('%d/%m/%Y %H:%M')  %><br/>
+
+      <b>User name:</b> <code><%= @exception_log.user.present? ? @exception_log.user.name : '---' %></code><br/>
+
+      <b>IP:</b> <%= @exception_log.ip %> <br/>
+
+      <b>Exception:</b> <%= @exception_log.exception %> <br/>
+
+      <b>Controller:</b> <code><%= @exception_log.controller %></code><br/>
+
+      <b>Action:</b> <code><%= @exception_log.action %></code><br/>
+
+      <b>Params:</b> <code><%= @exception_log.params %></code><br/>
+
+      <b>Session:</b> <code><%= @exception_log.session %></code><br/>
+
+      <b>Bactrace:</b>
+      <table>
+        <% @ruby_exception.backtrace.each_with_index do |line, index| %>
+          <% border_color = line.include?('/app/') ? '#000000' : '#F3F3F3' %>
+          <tr>
+            <td style="border:1px solid <%= border_color %>; background-color: #FFFFFF; padding:5px; color:#48545d; font-size:12px;">
+              <%= index %>
+            </td>
+            <td style="border:1px solid <%= border_color %>; background-color: #FFFFFF; padding:5px; color:#48545d; font-size:12px;">
+              <code>
+                <%= line %>
+              </code>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </font>
+<% end %>

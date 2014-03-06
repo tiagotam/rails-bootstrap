@@ -1,0 +1,8 @@
+<%= add_page_title(t('edit_my_company'))%>
+<div>
+  <%= form_for(@company, :html => {:multipart => true, :class => 'form-horizontal'}) do |f| %>
+    <%= error_messages!(@company) %>
+    <%= add_text_field(f, @company, :name)%>
+    <%= add_submit_button(f)%>
+  <% end %>
+</div>

@@ -1,0 +1,42 @@
+<div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#filter">
+          <i class="icon-filter"></i>
+          <%= t('filter')%>
+        </a>
+      </h4>
+    </div>
+    <div id="filter" class="panel-collapse collapse in">
+      <div class="panel-body">
+        <%= search_form_for @q do |f| %>
+          <table class="table">
+            <colgroup>
+              <col width="15%"/>
+              <col width="35%"/>
+              <col width="15%"/>
+              <col width="35%"/>
+            </colgroup>
+            <tr>
+              <td class="right"><%= f.label :first_name_cont, t('activerecord.attributes.user.first_name') %>&nbsp;</td>
+              <td><%= f.text_field :first_name_cont, class: 'form-control'  %></td>
+              <td class="right"><%= f.label :last_name_cont, t('activerecord.attributes.user.last_name') %>&nbsp;</td>
+              <td><%= f.text_field :last_name_cont, class: 'form-control'  %></td>
+            </tr>
+            <tr>
+              <td class="right"><%= f.label :email_cont, t('activerecord.attributes.user.email') %>&nbsp;</td>
+              <td><%= f.text_field :email_cont, class: 'form-control'  %></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+          <div class="center">
+            <%= f.submit t('search'), :class => 'btn btn-default' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,24 @@
+<%= add_page_title(t('edit_my_user'))%>
+
+<div>
+  <%= bootstrap_flash %>
+  <%= form_for(resource, :as => resource_name,
+               :url => registration_path(resource_name),
+               :html => {:class => 'form-horizontal'}) do |f| %>
+
+    <%= error_messages!(resource) %>
+
+    <%= add_text_field(f, resource, :first_name)%>
+    <%= add_text_field(f, resource, :last_name)%>
+    <%= add_text_field(f, resource, :email)%>
+    <%= add_password_field(f, resource, :password, true)%>
+    <%= add_password_field(f, resource, :password_confirmation, true)%>
+    <%= add_password_field(f, resource, :current_password, true)%>
+    <%= add_label(t('messages.password_confirmation_info'))%>
+
+
+    <%= add_submit_button(f)%>
+
+  <% end %>
+
+</div>

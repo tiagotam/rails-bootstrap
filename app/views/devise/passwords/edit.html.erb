@@ -1,0 +1,18 @@
+<h1 class="page-header"><%= t('password_recovery') %></h1>
+
+<div>
+  <%= bootstrap_flash %>
+
+  <%= form_for(resource, :as => resource_name,
+                         :url => password_path(resource_name),
+                         :html => {:method => :put, :class => 'form-horizontal'}) do |f| %>
+    <%= error_messages!(resource) %>
+    <%= f.hidden_field :reset_password_token %>
+
+    <%= add_password_field(f, resource, :password, true)%>
+    <%= add_password_field(f, resource, :password_confirmation, true)%>
+    <%= add_submit_button(f)%>
+
+
+  <% end %>
+</div>

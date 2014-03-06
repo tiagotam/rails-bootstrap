@@ -1,0 +1,54 @@
+<div class="breadcrumbs" id="breadcrumbs">
+  <ul class="breadcrumb">
+    <li>
+      <i class="icon-home home-icon"></i>
+      <%= link_to t('home'), root_path %>
+    </li>
+    <li>
+      <%= link_to t('users'), users_path %>
+    </li>
+    <li class="active"><%= @user.full_name %></li>
+  </ul>
+  <!-- .breadcrumb -->
+</div>
+
+<%= add_page_title(t(@user.full_name))%>
+
+
+
+<div class="table-responsive">
+  <table class="table">
+    <colgroup>
+      <col width="30%"/>
+      <col width="70%"/>
+    </colgroup>
+    <tr>
+      <th class="blue right"><%= t('activerecord.attributes.user.name')%></th>
+      <td><%= @user.full_name%></td>
+    </tr>
+    <tr>
+      <th class="blue right"><%= t('activerecord.attributes.user.email')%></th>
+      <td><%= @user.email%></td>
+    </tr>
+    <tr>
+      <th class="blue right"><%= t('company')%></th>
+      <td><%= @user.company.name if @user.company.present? %></td>
+    </tr>
+
+    <tr>
+      <th class="blue right"><%= t('activerecord.attributes.user.current_sign_in_at')%></th>
+      <td><%= format_date_time(@user.last_sign_in_at) %></td>
+    </tr>
+    <tr>
+      <th class="blue right"><%= t('activerecord.attributes.user.created_at')%></th>
+      <td><%= format_date_time(@user.created_at) %></td>
+    </tr>
+  </table>
+</div>
+
+
+<div class="form-actions">
+    <%= link_to t('edit_user'), edit_user_path(@user), class: 'btn btn-danger' %>
+    &nbsp; &nbsp; &nbsp;
+    <%= back %>
+</div>

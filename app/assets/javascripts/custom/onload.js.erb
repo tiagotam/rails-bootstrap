@@ -1,0 +1,50 @@
+// Rails Bootstrap
+// @author Tiago <tiago@tamworks.com>
+
+
+$(function() {
+  onload();
+  document.addEventListener("page:load", onload);
+
+});
+
+
+/**
+ * Apply default behaviors on every page
+ */
+function onload() {
+
+
+  $(".tooltip_top").tooltip({placement: 'top'});
+  $(".tooltip_left").tooltip({placement: 'left'});
+  $(".tooltip_right").tooltip({placement: 'right'});
+  $(".tooltip_bottom").tooltip({placement: 'bottom'});
+
+
+  $(".chosen-select").chosen();
+
+  apply_wizard();
+
+  apply_radio_group_button();
+
+  $('textarea.limited').inputlimiter({
+    remText: '%n caracteres restantes. ',
+    limitText: 'Máximo permitido: %n.'
+  });
+
+  $('input[data-mask]').each(function (input) {
+    $(this).setMask($(this).data('mask'), $(this).data('meiomask-options'));
+  });
+  
+}
+
+$(document).on("ajaxComplete", null, function(){
+  onload();
+  stop_default_spin();
+
+});
+
+$(document).on("ajaxStart", null, function(){
+  start_default_spin();
+});
+

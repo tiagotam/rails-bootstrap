@@ -1,0 +1,50 @@
+<div bgcolor="#e5e9ec">
+  <div class="adM"></div>
+  <table cellspacing="0" border="0" height="100%" bgcolor="#e5e9ec" cellpadding="0" width="100%">
+    <tbody>
+    <tr>
+      <td align="center" valign="top">
+        <table cellspacing="0" cellpadding="0" width="500">
+          <tbody>
+          <tr>
+            <td align="left" height="6" colspan="2" bgcolor="#e5e9ec"></td>
+          </tr>
+          </tbody>
+        </table>
+        <table cellspacing="0" cellpadding="0" width="500" style="background:#fff" bgcolor="#ffffff">
+          <tbody>
+          <tr>
+            <td align="center" valign="center" colspan="2" style="text-align:center;">
+
+              <a href="<%= APPLICATION_BASE_URL %>" target="_blank">
+                <h1><%= APPLICATION_NAME %></h1>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" colspan="2" style="padding:10px">
+              <%= yield :body %>
+            </td>
+          </tr>
+          <tr>
+            <td align="left" height="6" colspan="2" bgcolor="#e5e9ec">
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <table width="500">
+          <tbody>
+          <tr>
+            <td height="30" align="center">
+              <font color="#777" face="Helvetica Neue, Arial, Helvetica, sans-serif" style="font-size:12px;line-height:1.5">
+               <br><%= APPLICATION_NAME %>
+              </font>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

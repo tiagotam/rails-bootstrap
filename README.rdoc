@@ -7,7 +7,7 @@ Almost every project I have to start from scratch, including developing CRUD of 
 I made this project for me, but you are encouraged to participate suggesting things to help me start new projects as quickly as possible.with all this things. It will also works like a show case of best practices, plugins that I constantly use in my projects.
 
 
-=== Configuration Items ===
+=== Configuration Items
 
 * Ruby: 2.1.1
 * Rails: 4.0.3
@@ -17,22 +17,36 @@ I made this project for me, but you are encouraged to participate suggesting thi
 * jQuery UI: 1.10.3
 * Awesome-Fonts: 4.0.3
 
-=== Recomendations ===
+=== Recomendations
 
 I suggest you to use <strong>rbenv</strong> to manage your installed ruby versions.
 
 I also suggest you to use RubyMine as your default IDE.
 
-=== How to Run ===
+=== How to Run
 
 1) Clone this project
-2) Downloa and instal required gems: bundle install
-3) Create database: rake db:create
-4) Run all migratins: rake db:migrate
-5) Start the server: rails server -b 0.0.0.0 -p 3000 -e development
+
+<tt>git clone git@github.com:tiagotam/rails-bootstrap.git</tt>
+
+2) Downloa and instal required gems:
+
+<tt>bundle install</tt>
+
+3) Create database:
+
+<tt>rake db:create</tt>
+
+4) Run all migratins:
+
+<tt>rake db:migrate</tt>
+
+5) Start the server:
+
+<tt>rails server -b 0.0.0.0 -p 3000 -e development</tt>
 
 
-=== TODOs ===
+=== TODOs
 
 * add role/profile and permisions mechanism to allow admin user create roles and assign it to other users
 * add status to user and allow admin activate/inactivate users

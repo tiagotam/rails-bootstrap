@@ -1,7 +1,7 @@
 /*
  *= require bootstrap/bootstrap.css.erb
  *= require bootstrap/bootstrap-theme.css.erb
- *= require font-awesome/font-awesome
+ *= require font-awesome/font-awesome.css.erb
  *= require jquery-plugins/jquery-ui-1.10.3.min
  *= require jquery-plugins/chosen.min
  *= require custom/style

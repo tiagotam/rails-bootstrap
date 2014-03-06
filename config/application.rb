@@ -22,7 +22,7 @@ module RailsBootstrap
     config.i18n.default_locale = 'pt'
 
     # Precompile config
-    config.assets.precompile += [/ie_lt8.js$/, /ie_lt9.js$/, /ie_lt7.css$/, /ie_lt8.css$/]
+    config.assets.precompile += [/ie_lt8.js$/, /ie_lt9.js$/]
     config.assets.precompile +=  %w(*.png *.jpg *.jpeg *.gif *.eot *.svg *.ttf *.woff .oft)
 
     # Number of records per page

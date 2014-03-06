@@ -9,6 +9,10 @@ module ApplicationHelper
     "icons/16x16/#{icon_name}.png"
   end
 
+  def i(icon_name, icon_size=0)
+    "<i class='#{icon_name} icon-#{icon_size}' ></i>".html_safe
+  end
+
   # Returns alert with message and type
   def bootstrap_alert(message, type)
     html = <<-HTML

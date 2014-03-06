@@ -2,7 +2,7 @@
 // @author Tiago <tiago@tamworks.com>
 
 // Base Files
-//= require jquery
+//= require jquery/jquery-1.11.0.js
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap/bootstrap

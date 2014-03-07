@@ -4,7 +4,7 @@ Hi there! My name is Tiago Machado <tiago@tamworks.com> and I'll use this projec
 
 Almost every project I have to start from scratch, including developing CRUD of users and companies, for example. So I decided to keep this project with all this things. It will also works like a show case of best gems that I currently use in my projects.
 
-I made this project for me, but you are encouraged to participate suggesting things to help me start new projects as quickly as possible.with all this things. It will also works like a show case of best practices, plugins that I constantly use in my projects.
+I made this project for me, but you are encouraged to participate suggesting things to help me start new projects as quickly as possible.
 
 
 === Configuration Items

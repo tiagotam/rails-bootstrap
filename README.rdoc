@@ -17,9 +17,9 @@ I made this project for me, but you are encouraged to participate suggesting thi
 * jQuery UI: 1.10.3
 * Awesome-Fonts: 4.0.3
 
-=== Recomendations
+=== Recommendations
 
-I suggest you to use <strong>rbenv</strong> to manage your installed ruby versions.
+I suggest you to use *rbenv* to manage your installed ruby versions.
 
 I also suggest you to use RubyMine as your default IDE.
 

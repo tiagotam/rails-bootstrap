@@ -1,26 +1,38 @@
+#development:
+#  host: localhost
+#  adapter: postgresql
+#  encoding: utf8
+#  database: rails_bootstrap_development
+#  pool: 5
+#  username: postgres
+#  password: postgres
+#
+#test:
+#  host: localhost
+#  adapter: postgresql
+#  encoding: utf8
+#  database: rails_bootstrap_test
+#  pool: 5s
+#  username: postgres
+#  password: postgres
+#
+#production:
+#  host: localhost
+#  adapter: postgresql
+#  encoding: utf8
+#  database: rails_bootstrap_production
+#  pool: 5
+#  username: postgres
+#  password: postgres
+
 development:
-  host: localhost
-  adapter: postgresql
-  encoding: utf8
-  database: rails_bootstrap_development
-  pool: 5
-  username: postgres
-  password: postgres
+  adapter: sqlite3
+  database: db/development.sqlite3
 
 test:
-  host: localhost
-  adapter: postgresql
-  encoding: utf8
-  database: rails_bootstrap_test
-  pool: 5s
-  username: postgres
-  password: postgres
+  adapter: sqlite3
+  database: db/test.sqlite3
 
 production:
-  host: localhost
-  adapter: postgresql
-  encoding: utf8
-  database: rails_bootstrap_production
-  pool: 5
-  username: postgres
-  password: postgres
+  adapter: sqlite3
+  database: db/production.sqlite3

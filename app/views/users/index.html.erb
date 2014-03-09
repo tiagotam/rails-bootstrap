@@ -31,22 +31,20 @@
             <div class="action-buttons">
 
               <a href="<%= user_path(user)%>">
-                <i class="icon-zoom-in icon-1"></i>
+                <i class="fa fa-search"></i>
               </a>
 
               &nbsp;&nbsp;
 
               <a href="<%= edit_user_path(user)%>">
-                <i class="icon-pencil icon-1"></i>
+                <i class="fa fa-pencil"></i>
               </a>
 
               &nbsp;&nbsp;
 
               <a href="<%= user_path(user)%>" data-method="delete"
                  data-confirm="<%= t('messages.confirm_before_delete')%>">
-
-                  <i class="icon-trash icon-1"></i>
-
+                  <i class="fa fa-trash-o"></i>
               </a>
 
             </div>

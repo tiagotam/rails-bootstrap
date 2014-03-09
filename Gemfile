@@ -4,7 +4,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.3'
 
 # Use postgresql as the database for Active Record
-gem 'pg'
+gem 'pg', platforms: :ruby
+
+# Use jdbcsqlite3 as the database for Active Record
+gem 'activerecord-jdbcsqlite3-adapter', platforms: :jruby
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -17,6 +20,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
+gem 'therubyrhino', platforms: :jruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -40,7 +44,8 @@ group :test, :development do
 
   # MailCatcher runs a super simple SMTP server which catches any message sent to it to display in a web interface.
   # https://github.com/sj26/mailcatcher
-  gem 'mailcatcher'
+  #gem 'mailcatcher'
+  gem 'letter_opener_web'
 
   # Better error page for Rails and other Rack apps
   # https://github.com/charliesome/better_errors
@@ -105,7 +110,7 @@ gem 'friendly_id', '5.0.0.rc2'
 gem 'capistrano', group: :development
 
 # Use debugger
-gem 'debugger', group: [:development, :test]
+#gem 'debugger', group: [:development, :test]
 
 # Pagination library for Rails 3, Sinatra, Merb, DataMapper, and more
 # https://github.com/mislav/will_paginate

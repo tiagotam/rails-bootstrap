@@ -28,7 +28,9 @@ RailsBootstrap::Application.routes.draw do
   end
   resources :companies
 
-
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
 
   match "*path", :to => "application#routing_error", :via => :all
 
